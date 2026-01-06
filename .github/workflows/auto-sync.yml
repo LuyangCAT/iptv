@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync upstream changes
-        # 直接调用 GitHub 官方同步命令
         run: gh repo sync ${{ github.repository }} -b main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 将这里的 GITHUB_TOKEN 换成你刚才设置的密钥名
+          GITHUB_TOKEN: ${{ secrets.SYNC_PAT }}
